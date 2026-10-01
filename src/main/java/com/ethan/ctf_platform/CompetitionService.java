@@ -1,6 +1,6 @@
 package com.ethan.ctf_platform;
 
-
+import java.util.List;
 import java.time.LocalDateTime;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +19,9 @@ public class CompetitionService {
             throw new IllegalArgumentException("End time must be after the current time");
         }
         return competitionRepository.save(newCompetition);
+    }
+    public List<Competition> getAllCompetitions() {
+        return competitionRepository.findAll();
+
     }
 }
